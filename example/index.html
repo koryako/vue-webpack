@@ -1,0 +1,58 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
+    
+    <title>vue-input-demo</title>
+</head><body>
+
+        <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+        <script type=text/javascript src="vue-pay-keyboard.js"></script>
+    <!--<link href="vue-flag-list.min.css" rel="stylesheet" type="text/css">-->
+   
+    <div id="app">
+            <h1>Hello App!</h1>
+            <input >
+            <button @click="buttonclick">fdf</button>
+            <button @click="payShow()">点击支付</button> 
+             <vue-pay-keyboard :is-Pay='isPay' @-pasEnd='pasEnd' @close='isPay=false'></vue-pay-keyboard>
+
+            
+          </div>
+  <script>
+
+  
+
+    var vm = new Vue({
+            el:'#app',
+            data:{
+                isPay:true
+               
+            },
+            methods:{
+                payShow:function(){
+                    //https://github.com/yucccc/vue-pay-keyboard/blob/master/src/App.vue
+                    this.isPay=true
+                },
+
+                buttonclick:function(){
+                     alert(1)
+                },
+                pasEnd(val) {
+      console.log(val);  //得到密码 可能会进行一些加密动作
+      setTimeout(() => { // 模拟请求接口验证密码中 ..
+        if (val === '111111') { // 密码正确
+          this.$refs.pay.$payStatus(true) // 拿到子组件的事件
+        } else {
+          this.$refs.pay.$payStatus(false)
+        }
+      }, 1000)
+    }
+            },
+           
+        });
+
+    console.log(window)
+  
+   
+    </script>
+      
+      
+</body></html>
