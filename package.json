@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "vue": "^2.5.2",
-    "vue-flag-list": "file:../vue-flag-list/vue-flag-list-1.0.4.tgz",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
@@ -68,9 +67,7 @@
     "ts-loader": "^4.3.0",
     "typescript": "^2.8.3",
     "uglifyjs-webpack-plugin": "^1.1.1",
-    "undefined": "^undefined",
     "url-loader": "^0.5.8",
-    "vue-input-demo": "file:../vue-input-demo/vue-input-demo-1.0.0.tgz",
     "vue-jest": "^1.0.2",
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
